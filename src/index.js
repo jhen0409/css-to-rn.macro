@@ -1,1 +1,1 @@
-module.exports = require('./macro').default
+module.exports = require('./macro')
