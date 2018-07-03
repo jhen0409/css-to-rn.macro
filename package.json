@@ -1,0 +1,22 @@
+{
+  "name": "css-to-rn.macro",
+  "description": "Convert CSS to React Native styles with babel macros",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:jhen0409/css-to-rn.macro.git",
+  "author": "Jhen <developer@jhen.me>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "prepublish": "yarn test"
+  },
+  "devDependencies": {
+    "babel-plugin-tester": "^5.4.0",
+    "babel-plugin-macros": "^2.2.2",
+    "jest": "^23.2.0"
+  },
+  "dependencies": {
+    "babel-literal-to-ast": "^2.0.0",
+    "css-to-react-native-transform": "^1.6.0"
+  }
+}

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macros 1. macros: 1. macros 1`] = `
+"
+import { StyleSheet } from 'react-native';
+import css from '../macro';
+const styles = StyleSheet.create(
+  css\`
+    .container {
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+    }
+    .text {
+      font-size: 18;
+      color: black;
+    }
+  \`
+);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  'container': {
+    'flexGrow': 1,
+    'flexShrink': 1,
+    'flexBasis': 0,
+    'justifyContent': 'center',
+    'alignItems': 'center'
+  },
+  'text': {
+    'fontSize': 18,
+    'color': 'black'
+  }
+});
+"
+`;
