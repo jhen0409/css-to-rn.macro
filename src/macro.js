@@ -8,10 +8,12 @@ function cssToRNMacro({
   babel: { types: t },
 }) {
   // Case: CSS to RN
-  defaultRefs.forEach(referencePath => transform(referencePath.parentPath))
+  defaultRefs.forEach(referencePath =>
+    transform(referencePath.parentPath, state, t),
+  )
 
   // Case: parseMedia -> react-native-css-media-query-processor
-  mediaRefs.forEach(referencePath => parseMedia(referencePath, state))
+  mediaRefs.forEach(referencePath => parseMedia(referencePath, state, t))
 }
 
 module.exports = createMacro(cssToRNMacro)
