@@ -1,6 +1,6 @@
 # css-to-rn.macro [![NPM version](http://img.shields.io/npm/v/css-to-rn.macro.svg?style=flat)](https://www.npmjs.com/package/css-to-rn.macro) [![Build Status](https://travis-ci.org/jhen0409/css-to-rn.macro.svg?branch=master)](https://travis-ci.org/jhen0409/css-to-rn.macro) [![Greenkeeper badge](https://badges.greenkeeper.io/jhen0409/css-to-rn.macro.svg)](https://greenkeeper.io/)
 
-> Convert CSS to React Native styles with [babel macros](https://github.com/kentcdodds/babel-plugin-macros), using [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform).
+> Convert CSS to React Native style sheet at build time with [babel macros](https://github.com/kentcdodds/babel-plugin-macros), using [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform).
 
 - A lightweight way to write CSS for React Native
 - Use CSS to write React Native styles without take startup time for parse in JS runtime
