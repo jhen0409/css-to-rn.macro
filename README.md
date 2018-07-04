@@ -49,6 +49,37 @@ const styles = StyleSheet.create({
 })
 ```
 
+## Media Queries support
+
+The [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) allows parse the CSS Media Queries, and you can use it with [`react-native-css-media-query-processor`](https://github.com/kristerkari/react-native-css-media-query-processor)
+
+This is example for change styles with platform:
+
+```js
+import { StyleSheet } from 'react-native'
+import css, { parseMedia } from 'css-to-rn.macro'
+
+const styles = StyleSheet.create(
+  parseMedia(
+    css`
+      .container {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+      @media not android {
+        .container {
+          background-color: #ccc;
+        }
+      }
+    `,
+    {
+      /* match object of react-native-css-media-query-processor */
+    },
+  ),
+)
+```
+
 ## Limitations
 
 - Currently doesn't support string substitution for template literal (`${}`)

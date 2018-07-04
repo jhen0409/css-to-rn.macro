@@ -37,3 +37,77 @@ const styles = StyleSheet.create({
 });
 "
 `;
+
+exports[`macros 2. macros: 2. macros 1`] = `
+"
+import { StyleSheet } from 'react-native'
+import css, { parseMedia } from 'css-to-rn.macro'
+
+const styles = StyleSheet.create(
+  parseMedia(
+    css\`
+      .container {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+      @media not android {
+        .container {
+          background-color: #ccc;
+        }
+      }
+    \`,
+    {
+      /* match object of react-native-css-media-query-processor */
+    },
+  ),
+)
+parseMedia(css\`@media not android { .container { flex: 1; } }\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import _parseMedia from 'react-native-css-media-query-processor';
+import { StyleSheet } from 'react-native';
+
+
+const styles = StyleSheet.create(_parseMedia({
+  'container': {
+    'flexGrow': 1,
+    'flexShrink': 1,
+    'flexBasis': 0,
+    'justifyContent': 'center',
+    'alignItems': 'center'
+  },
+  '__mediaQueries': {
+    '@media not android': [{
+      'inverse': true,
+      'type': 'android',
+      'expressions': []
+    }]
+  },
+  '@media not android': {
+    'container': {
+      'backgroundColor': '#ccc'
+    }
+  }
+}, {
+  /* match object of react-native-css-media-query-processor */
+}));
+_parseMedia({
+  '__mediaQueries': {
+    '@media not android': [{
+      'inverse': true,
+      'type': 'android',
+      'expressions': []
+    }]
+  },
+  '@media not android': {
+    'container': {
+      'flexGrow': 1,
+      'flexShrink': 1,
+      'flexBasis': 0
+    }
+  }
+});
+"
+`;

@@ -17,12 +17,13 @@
     "prepublish": "yarn test"
   },
   "devDependencies": {
-    "babel-plugin-tester": "^5.4.0",
     "babel-plugin-macros": "^2.2.2",
+    "babel-plugin-tester": "^5.4.0",
     "jest": "^23.2.0"
   },
   "dependencies": {
     "babel-literal-to-ast": "^2.0.0",
-    "css-to-react-native-transform": "^1.6.0"
+    "css-to-react-native-transform": "^1.6.0",
+    "react-native-css-media-query-processor": "^0.20.0"
   }
 }
