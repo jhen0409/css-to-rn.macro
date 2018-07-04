@@ -4,7 +4,7 @@ module.exports = function(path, state) {
   path.replaceWith(
     state.addImport(
       'react-native-css-media-query-processor',
-      'default',
+      'process',
       'parseMedia',
     ),
   )

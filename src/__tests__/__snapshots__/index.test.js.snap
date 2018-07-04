@@ -109,7 +109,7 @@ parseMedia(css\`@media not android { .container { flex: 1; } }\`)
 
       ↓ ↓ ↓ ↓ ↓ ↓
 
-import _parseMedia from 'react-native-css-media-query-processor';
+import { process as _parseMedia } from 'react-native-css-media-query-processor';
 import { StyleSheet } from 'react-native';
 
 
