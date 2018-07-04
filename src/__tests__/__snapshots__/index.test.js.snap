@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`macros 1. macros: 1. macros 1`] = `
+exports[`macros Convert styles successful: Convert styles successful 1`] = `
 "
 import { StyleSheet } from 'react-native';
 import css from '../macro';
@@ -38,7 +38,50 @@ const styles = StyleSheet.create({
 "
 `;
 
-exports[`macros 2. macros: 2. macros 1`] = `
+exports[`macros Fallback to \`css-to-react-native-transfom\` import if used expressions: Fallback to \`css-to-react-native-transfom\` import if used expressions 1`] = `
+"
+import { StyleSheet } from 'react-native';
+import css from '../macro';
+const height = 100;
+const styles = StyleSheet.create(
+  css\`
+    .container {
+      flex: 1;
+      height: \${height};
+      justify-content: center;
+      align-items: center;
+    }
+    .text {
+      font-size: 18;
+      color: black;
+    }
+  \`
+);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import _css from 'css-to-react-native-transform';
+import { StyleSheet } from 'react-native';
+
+const height = 100;
+const styles = StyleSheet.create(_css(\`
+    .container {
+      flex: 1;
+      height: \${height};
+      justify-content: center;
+      align-items: center;
+    }
+    .text {
+      font-size: 18;
+      color: black;
+    }
+  \`, {
+  'parseMediaQueries': true
+}));
+"
+`;
+
+exports[`macros parseMedia successful: parseMedia successful 1`] = `
 "
 import { StyleSheet } from 'react-native'
 import css, { parseMedia } from 'css-to-rn.macro'

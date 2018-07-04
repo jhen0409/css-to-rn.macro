@@ -7,8 +7,8 @@ pluginTester({
   babelOptions: {
     filename: __filename,
   },
-  tests: [
-    `
+  tests: {
+    'Convert styles successful': `
 import { StyleSheet } from 'react-native';
 import css from '../macro';
 const styles = StyleSheet.create(
@@ -25,7 +25,26 @@ const styles = StyleSheet.create(
   \`
 );
     `,
-    `
+    'Fallback to `css-to-react-native-transfom` import if used expressions': `
+import { StyleSheet } from 'react-native';
+import css from '../macro';
+const height = 100;
+const styles = StyleSheet.create(
+  css\`
+    .container {
+      flex: 1;
+      height: \${height};
+      justify-content: center;
+      align-items: center;
+    }
+    .text {
+      font-size: 18;
+      color: black;
+    }
+  \`
+);
+    `,
+    'parseMedia successful': `
 import { StyleSheet } from 'react-native'
 import css, { parseMedia } from 'css-to-rn.macro'
 
@@ -50,5 +69,5 @@ const styles = StyleSheet.create(
 )
 parseMedia(css\`@media not android { .container { flex: 1; } }\`)
     `,
-  ],
+  },
 })
