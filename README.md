@@ -82,7 +82,7 @@ const styles = StyleSheet.create(
 
 ## Limitations
 
-- Currently doesn't support string substitution for template literal (`${}`)
+- Currently doesn't support string substitution for template literal (`${}`), it will be fallback to [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) import
 
 ## License
 
