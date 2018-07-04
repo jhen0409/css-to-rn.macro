@@ -68,6 +68,7 @@ const styles = StyleSheet.create(
   ),
 )
 parseMedia(css\`@media not android { .container { flex: 1; } }\`)
+parseMedia
     `,
   },
 })
