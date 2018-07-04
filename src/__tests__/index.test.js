@@ -25,5 +25,30 @@ const styles = StyleSheet.create(
   \`
 );
     `,
+    `
+import { StyleSheet } from 'react-native'
+import css, { parseMedia } from 'css-to-rn.macro'
+
+const styles = StyleSheet.create(
+  parseMedia(
+    css\`
+      .container {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+      @media not android {
+        .container {
+          background-color: #ccc;
+        }
+      }
+    \`,
+    {
+      /* match object of react-native-css-media-query-processor */
+    },
+  ),
+)
+parseMedia(css\`@media not android { .container { flex: 1; } }\`)
+    `,
   ],
 })
