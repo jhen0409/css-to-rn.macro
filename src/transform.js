@@ -15,5 +15,5 @@ module.exports = function(path) {
     (head, quasi, index) => head + quasi.value.raw,
     '',
   )
-  path.replaceWith(serialize(cssToRN(source)))
+  path.replaceWith(serialize(cssToRN(source, { parseMediaQueries: true })))
 }
