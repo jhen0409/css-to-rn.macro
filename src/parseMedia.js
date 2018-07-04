@@ -12,7 +12,7 @@ module.exports = function(path, state, types) {
       'parseMedia',
     ),
   )
-  // if not provided `matchObject`, make a one
+  // if not provided `matchObject`, make an one
   if (parent.node.arguments.length === 1) {
     parent.node.arguments.push(serialize({}))
   }
