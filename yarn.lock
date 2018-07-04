@@ -682,15 +682,15 @@ css-mediaquery@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/css-mediaquery/-/css-mediaquery-0.1.2.tgz#6a2c37344928618631c54bd33cedd301da18bea0"
 
-css-to-react-native-transform@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/css-to-react-native-transform/-/css-to-react-native-transform-1.6.0.tgz#1b4088c6bdb23083d88953b6f454e35c88c33f0a"
+css-to-react-native-transform@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/css-to-react-native-transform/-/css-to-react-native-transform-1.7.0.tgz#1e12deb806644be88583ac3751fad68b0e321437"
   dependencies:
-    css "^2.2.1"
+    css "^2.2.3"
     css-mediaquery "^0.1.2"
-    css-to-react-native "^2.2.0"
+    css-to-react-native "^2.2.1"
 
-css-to-react-native@^2.2.0:
+css-to-react-native@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-2.2.1.tgz#7f3f4c95de65501b8720c87bf0caf1f39073b88e"
   dependencies:
@@ -698,7 +698,7 @@ css-to-react-native@^2.2.0:
     fbjs "^0.8.5"
     postcss-value-parser "^3.3.0"
 
-css@^2.2.1:
+css@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/css/-/css-2.2.3.tgz#f861f4ba61e79bedc962aa548e5780fd95cbc6be"
   dependencies:
@@ -759,7 +759,7 @@ deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
 
-deepmerge@^2.1.0:
+deepmerge@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-2.1.1.tgz#e862b4e45ea0555072bf51e7fd0d9845170ae768"
 
@@ -2012,7 +2012,7 @@ merge@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
 
-micro-memoize@^2.0.1:
+micro-memoize@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/micro-memoize/-/micro-memoize-2.0.3.tgz#5122131971eae6c69249a8a63a91b7b5cee20111"
 
@@ -2473,12 +2473,12 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-native-css-media-query-processor@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/react-native-css-media-query-processor/-/react-native-css-media-query-processor-0.20.0.tgz#99810a3c0c5313d1ec35b93d487a9c7ca973b2eb"
+react-native-css-media-query-processor@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/react-native-css-media-query-processor/-/react-native-css-media-query-processor-0.21.0.tgz#17cbce705ea07dbb13293a6dc038b966dcd5767a"
   dependencies:
-    deepmerge "^2.1.0"
-    micro-memoize "^2.0.1"
+    deepmerge "^2.1.1"
+    micro-memoize "^2.0.3"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"

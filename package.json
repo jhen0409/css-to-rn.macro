@@ -9,8 +9,7 @@
   "keywords": [
     "react-native",
     "css",
-    "babel",
-    "macro"
+    "babel-plugin-macros"
   ],
   "scripts": {
     "test": "jest",
@@ -23,7 +22,7 @@
   },
   "dependencies": {
     "babel-literal-to-ast": "^2.0.0",
-    "css-to-react-native-transform": "^1.6.0",
+    "css-to-react-native-transform": "^1.7.0",
     "react-native-css-media-query-processor": "^0.21.0"
   }
 }
