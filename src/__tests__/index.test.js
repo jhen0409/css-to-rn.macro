@@ -8,7 +8,7 @@ pluginTester({
     filename: __filename,
   },
   tests: {
-    'Convert styles successful': `
+    'Convert styles successfully': `
 import { StyleSheet } from 'react-native';
 import css from '../macro';
 const styles = StyleSheet.create(
@@ -25,15 +25,18 @@ const styles = StyleSheet.create(
   \`
 );
     `,
-    'Fallback to `css-to-react-native-transfom` import if used expressions': `
+    'Convert styles with known value of string substitution successfully': `
 import { StyleSheet } from 'react-native';
 import css from '../macro';
-const height = 100;
+
+let height = 100;
+const h = height;
+
 const styles = StyleSheet.create(
   css\`
     .container {
       flex: 1;
-      height: \${height};
+      height: \${h};
       justify-content: center;
       align-items: center;
     }
@@ -44,7 +47,29 @@ const styles = StyleSheet.create(
   \`
 );
     `,
-    'parseMedia successful': `
+    'Fallback to `css-to-react-native-transform` import with unknown value of string substitution': `
+import { StyleSheet } from 'react-native';
+import css from '../macro';
+
+let height = Math.random() * 100;
+const h = height;
+
+const styles = StyleSheet.create(
+  css\`
+    .container {
+      flex: 1;
+      height: \${h};
+      justify-content: center;
+      align-items: center;
+    }
+    .text {
+      font-size: 18;
+      color: black;
+    }
+  \`
+);
+    `,
+    'parseMedia successfully': `
 import { StyleSheet } from 'react-native'
 import css, { parseMedia } from 'css-to-rn.macro'
 
