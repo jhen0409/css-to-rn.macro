@@ -1,7 +1,7 @@
 {
   "name": "css-to-rn.macro",
   "description": "Convert CSS to React Native style sheet at build time with babel macros",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "main": "src/index.js",
   "repository": "git@github.com:jhen0409/css-to-rn.macro.git",
   "author": "Jhen <developer@jhen.me>",
