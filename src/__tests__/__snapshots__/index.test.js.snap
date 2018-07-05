@@ -135,10 +135,21 @@ const styles = StyleSheet.create(_css(\`
 "
 `;
 
+exports[`macros Not convert if it is not template literal: Not convert if it is not template literal 1`] = `
+"
+import css from '../macro';
+css;css();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+css;css();
+"
+`;
+
 exports[`macros parseMedia successfully: parseMedia successfully 1`] = `
 "
 import { StyleSheet } from 'react-native'
-import css, { parseMedia } from 'css-to-rn.macro'
+import css, { parseMedia } from '../macro';
 
 const styles = StyleSheet.create(
   parseMedia(

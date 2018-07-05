@@ -69,9 +69,13 @@ const styles = StyleSheet.create(
   \`
 );
     `,
+    'Not convert if it is not template literal': `
+import css from '../macro';
+css;css();
+    `,
     'parseMedia successfully': `
 import { StyleSheet } from 'react-native'
-import css, { parseMedia } from 'css-to-rn.macro'
+import css, { parseMedia } from '../macro';
 
 const styles = StyleSheet.create(
   parseMedia(
