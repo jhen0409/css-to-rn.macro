@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 
 ## Media Queries support
 
-The [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) allows parse the CSS Media Queries, and you can use it with [`react-native-css-media-query-processor`](https://github.com/kristerkari/react-native-css-media-query-processor)
+The [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) allow parsing the CSS Media Queries, and you can use it with [`react-native-css-media-query-processor`](https://github.com/kristerkari/react-native-css-media-query-processor)
 
 This is example for change styles with platform:
 
@@ -93,9 +93,9 @@ css`
 `
 ```
 
-Due to the `height` is random number, so it is unknown value at build time.
+Due to the `height` is random number, so it's unknown value at build time.
 
-It will be just fallback to [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) with warning, but you can still use this macro.
+It will just fallback to [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) with a warning, but you can still use this macro.
 
 ## License
 
