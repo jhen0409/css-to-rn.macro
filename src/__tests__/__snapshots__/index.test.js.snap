@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`macros Convert styles successful: Convert styles successful 1`] = `
+exports[`macros Convert styles successfully: Convert styles successfully 1`] = `
 "
 import { StyleSheet } from 'react-native';
 import css from '../macro';
@@ -38,16 +38,67 @@ const styles = StyleSheet.create({
 "
 `;
 
-exports[`macros Fallback to \`css-to-react-native-transfom\` import if used expressions: Fallback to \`css-to-react-native-transfom\` import if used expressions 1`] = `
+exports[`macros Convert styles with known value of string substitution successfully: Convert styles with known value of string substitution successfully 1`] = `
 "
 import { StyleSheet } from 'react-native';
 import css from '../macro';
-const height = 100;
+
+let height = 100;
+const h = height;
+
 const styles = StyleSheet.create(
   css\`
     .container {
       flex: 1;
-      height: \${height};
+      height: \${h};
+      justify-content: center;
+      align-items: center;
+    }
+    .text {
+      font-size: 18;
+      color: black;
+    }
+  \`
+);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import { StyleSheet } from 'react-native';
+
+
+let height = 100;
+const h = height;
+
+const styles = StyleSheet.create({
+  'container': {
+    'flexGrow': 1,
+    'flexShrink': 1,
+    'flexBasis': 0,
+    'height': 100,
+    'justifyContent': 'center',
+    'alignItems': 'center'
+  },
+  'text': {
+    'fontSize': 18,
+    'color': 'black'
+  }
+});
+"
+`;
+
+exports[`macros Fallback to \`css-to-react-native-transform\` import with unknown value of string substitution: Fallback to \`css-to-react-native-transform\` import with unknown value of string substitution 1`] = `
+"
+import { StyleSheet } from 'react-native';
+import css from '../macro';
+
+let height = Math.random() * 100;
+const h = height;
+
+const styles = StyleSheet.create(
+  css\`
+    .container {
+      flex: 1;
+      height: \${h};
       justify-content: center;
       align-items: center;
     }
@@ -63,11 +114,14 @@ const styles = StyleSheet.create(
 import _css from 'css-to-react-native-transform';
 import { StyleSheet } from 'react-native';
 
-const height = 100;
+
+let height = Math.random() * 100;
+const h = height;
+
 const styles = StyleSheet.create(_css(\`
     .container {
       flex: 1;
-      height: \${height};
+      height: \${h};
       justify-content: center;
       align-items: center;
     }
@@ -81,10 +135,21 @@ const styles = StyleSheet.create(_css(\`
 "
 `;
 
-exports[`macros parseMedia successful: parseMedia successful 1`] = `
+exports[`macros Not convert if it is not template literal: Not convert if it is not template literal 1`] = `
+"
+import css from '../macro';
+css;css();
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+css;css();
+"
+`;
+
+exports[`macros parseMedia successfully: parseMedia successfully 1`] = `
 "
 import { StyleSheet } from 'react-native'
-import css, { parseMedia } from 'css-to-rn.macro'
+import css, { parseMedia } from '../macro';
 
 const styles = StyleSheet.create(
   parseMedia(

@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 
 ## Media Queries support
 
-The [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) allows parse the CSS Media Queries, and you can use it with [`react-native-css-media-query-processor`](https://github.com/kristerkari/react-native-css-media-query-processor)
+The [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) allow parsing the CSS Media Queries, and you can use it with [`react-native-css-media-query-processor`](https://github.com/kristerkari/react-native-css-media-query-processor)
 
 This is example for change styles with platform:
 
@@ -82,7 +82,20 @@ const styles = StyleSheet.create(
 
 ## Limitations
 
-- Currently doesn't support string substitution for template literal (`${}`), it will be fallback to [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) import. See [this snapshot](https://github.com/jhen0409/css-to-rn.macro/blob/7a58b38e4eb26b95f23c9a7a4f66ac35ff589df1/src/__tests__/__snapshots__/index.test.js.snap#L41-L82).
+#### Unable to parse unknown values in CSS template literal, for example:
+
+```js
+const height = Math.random() * 100
+css`
+  .container {
+    height: ${height};
+  }
+`
+```
+
+Due to the `height` is random number, so it's unknown value at build time.
+
+It will just fallback to [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-react-native-transform) with a warning, but you can still use this macro.
 
 ## License
 

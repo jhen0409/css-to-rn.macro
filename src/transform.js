@@ -4,6 +4,13 @@ const cssToRN = require('css-to-react-native-transform').default
 function fallback(path, state, types) {
   const tag = path.get('tag')
   const quasi = path.get('quasi')
+  if (!tag.node || !quasi.node) return
+
+  console.warn(
+    '[css-to-rn.macro] Unable to determine the value of your CSS string,',
+    'fallback to `css-to-react-native-transform` import.',
+  )
+
   path.replaceWith(
     types.callExpression(
       state.addImport(
@@ -17,20 +24,12 @@ function fallback(path, state, types) {
 }
 
 module.exports = function(path, state, types) {
-  const tagPath = path.get('quasi')
+  const source = path.get('quasi').evaluate().value
 
-  const expressions = tagPath.get('expressions')
-  if (expressions.length) {
-    console.warn(
-      "[css-to-rn.macro] Currently this plugin doesn't support string substitution in css-to-rn template literal, fallback to `css-to-react-native-transform` import.",
-    )
+  if (!source) {
     fallback(path, state, types)
     return
   }
 
-  const source = tagPath.node.quasis.reduce(
-    (head, quasi, index) => head + quasi.value.raw,
-    '',
-  )
   path.replaceWith(serialize(cssToRN(source, { parseMediaQueries: true })))
 }
