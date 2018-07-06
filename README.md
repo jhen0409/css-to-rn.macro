@@ -56,9 +56,17 @@ The [`css-to-react-native-transform`](https://github.com/kristerkari/css-to-reac
 This is example for change styles with platform:
 
 ```js
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
 import css, { parseMedia } from 'css-to-rn.macro'
 
+const win = Dimensions.get('window')
+const matchObj = {
+  width: win.width,
+  height: win.height,
+  orientation: win.width > win.height ? 'landscape' : 'portrait',
+  'aspect-ratio': win.width / win.height,
+  type: 'screen',
+}
 const styles = StyleSheet.create(
   parseMedia(
     css`
@@ -73,9 +81,7 @@ const styles = StyleSheet.create(
         }
       }
     `,
-    {
-      /* match object of react-native-css-media-query-processor */
-    },
+    matchObj
   ),
 )
 ```
