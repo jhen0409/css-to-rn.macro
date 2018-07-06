@@ -59,13 +59,13 @@ This is example for change styles with platform:
 import { Dimensions, StyleSheet } from 'react-native'
 import css, { parseMedia } from 'css-to-rn.macro'
 
-const win = Dimensions.get("window")
+const win = Dimensions.get('window')
 const matchObj = {
   width: win.width,
   height: win.height,
-  orientation: win.width > win.height ? "landscape" : "portrait",
-  "aspect-ratio": win.width / win.height,
-  type: "screen"
+  orientation: win.width > win.height ? 'landscape' : 'portrait',
+  'aspect-ratio': win.width / win.height,
+  type: 'screen',
 }
 const styles = StyleSheet.create(
   parseMedia(
