@@ -343,9 +343,10 @@ babel-plugin-syntax-object-rest-spread@^6.13.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
 
-babel-plugin-tester@^5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-tester/-/babel-plugin-tester-5.4.0.tgz#cf4054138a3a7850891a959427993e1bb4d201d7"
+babel-plugin-tester@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-tester/-/babel-plugin-tester-6.0.0.tgz#91483381e65f48ea717320a30a9182a441e3fe18"
+  integrity sha512-vzR8l3w9OlXSv6XmdTHu1qpT4i4/y7sK/g0mH1FusPIK7fPd8PYgkzSfuHpLp0JgQzY/LTsmxkSIXfTyfjZ9Ug==
   dependencies:
     common-tags "^1.4.0"
     invariant "^2.2.2"
